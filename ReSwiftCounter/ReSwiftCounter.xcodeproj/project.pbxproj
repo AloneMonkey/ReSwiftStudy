@@ -374,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDBE6C26E3EF58959B36984C /* Pods-ReSwiftCounter.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2462Q76A7G;
 				INFOPLIST_FILE = ReSwiftCounter/Info.plist;
@@ -389,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1583744D5ECE4B5FFB72DB /* Pods-ReSwiftCounter.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2462Q76A7G;
 				INFOPLIST_FILE = ReSwiftCounter/Info.plist;

@@ -1,0 +1,7 @@
+use_frameworks!
+
+target 'ReSwiftCounter' do
+
+pod 'ReSwift'
+
+end

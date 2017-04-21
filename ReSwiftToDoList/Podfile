@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'ReSwiftToDoList' do
+
+pod 'ReSwift'
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RealmSwift'
+pod 'RxRealm'
+pod 'RxDataSources'
+pod 'Action'
+pod 'NSObject+Rx'
+
+end

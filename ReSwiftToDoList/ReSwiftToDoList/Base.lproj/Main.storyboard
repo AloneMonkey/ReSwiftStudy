@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mFV-f2-vvz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo List-->
+        <scene sceneID="HI6-kd-DAJ">
+            <objects>
+                <viewController id="HLA-JE-9hj" customClass="TasksViewController" customModule="ReSwiftToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VEX-56-pKu"/>
+                        <viewControllerLayoutGuide type="bottom" id="03d-Hi-RFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="4RT-bi-VEo">
+                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qtB-n3-cjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskItemCell" id="fQb-R8-mkk" customClass="TaskItemTableViewCell" customModule="ReSwiftToDoList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQb-R8-mkk" id="LIk-Ij-Oxy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W9-we-5RE">
+                                                    <rect key="frame" x="326" y="10" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="ItemChecked"/>
+                                                    <connections>
+                                                        <action selector="checked:" destination="fQb-R8-mkk" eventType="touchUpInside" id="G2E-ld-Bxd"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOi-NL-Xd6">
+                                                    <rect key="frame" x="19" y="-1" width="265" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="8W9-we-5RE" id="k94-Wm-Mww"/>
+                                            <outlet property="title" destination="EOi-NL-Xd6" id="uw0-2I-cLe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qtB-n3-cjZ" firstAttribute="top" secondItem="VEX-56-pKu" secondAttribute="bottom" id="NKv-cd-IoR"/>
+                            <constraint firstItem="03d-Hi-RFh" firstAttribute="top" secondItem="qtB-n3-cjZ" secondAttribute="bottom" id="Sgh-g8-rL5"/>
+                            <constraint firstAttribute="trailing" secondItem="qtB-n3-cjZ" secondAttribute="trailing" id="dDD-Rh-QoK"/>
+                            <constraint firstItem="qtB-n3-cjZ" firstAttribute="leading" secondItem="4RT-bi-VEo" secondAttribute="leading" id="dfG-bu-JJw"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Todo List" id="T6P-c6-FVj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p6M-6l-sdh">
+                            <connections>
+                                <segue destination="Qzp-ED-PkN" kind="push" id="Oea-zW-1Zk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="qtB-n3-cjZ" id="iew-5h-sZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0N-3c-KqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="820.83958020989508"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JiI-22-4pX">
+            <objects>
+                <navigationController storyboardIdentifier="Tasks" id="mFV-f2-vvz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cw9-AL-e4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.8901960784313725" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HLA-JE-9hj" kind="relationship" relationship="rootViewController" id="a0G-bY-ci2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0z-D4-A8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="821"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="tOW-Om-N00">
+            <objects>
+                <viewController storyboardIdentifier="EditTask" id="Qzp-ED-PkN" customClass="EditTaskViewController" customModule="ReSwiftToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="STE-vc-Bkt"/>
+                        <viewControllerLayoutGuide type="bottom" id="JuB-QV-bZ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vW9-hS-N96">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-56-XX7">
+                                <rect key="frame" x="16" y="72" width="123" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zCn-Ca-kpM">
+                                <rect key="frame" x="16" y="94" width="343" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit" id="OTn-wu-S6h">
+                        <barButtonItem key="leftBarButtonItem" title="OK" id="M12-Xe-Hpf">
+                            <connections>
+                                <action selector="addTask:" destination="Qzp-ED-PkN" id="19v-mc-la1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="pp0-y9-tic">
+                            <connections>
+                                <action selector="cancelTask:" destination="Qzp-ED-PkN" id="2x1-sx-kiu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="pp0-y9-tic" id="Kxg-87-isB"/>
+                        <outlet property="okButton" destination="M12-Xe-Hpf" id="wlz-SR-0Ip"/>
+                        <outlet property="titleView" destination="zCn-Ca-kpM" id="H47-Tg-tNm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a81-cX-sIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="821"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ItemChecked" width="24" height="24"/>
+    </resources>
+</document>
